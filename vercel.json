@@ -4,18 +4,7 @@
     {
       "src": "server.js",
       "use": "@vercel/node"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "server.js"
-    }
-  ]
-}
-{
-  "version": 2,
-  "builds": [
+    },
     {
       "src": "api/chat.js",
       "use": "@vercel/node"
@@ -23,8 +12,16 @@
   ],
   "routes": [
     {
+      "src": "/(.*)",
+      "dest": "server.js"
+    },
+    {
       "src": "/api/chat",
       "dest": "/api/chat.js"
     }
-  ]
+  ],
+  "env": {
+    "GEMINI_API_KEY": "@gemini_api_key"
+  },
+  "ignoreCommand": "echo 'Do not deploy .env files!'"
 }
