@@ -453,10 +453,12 @@ document.addEventListener('DOMContentLoaded', function() {
         let topic = topicInput.value.trim();
         const language = languageSelect.value;
         const age = combinedAgeInput.value;
+    
         if (!topic) {
             setStatusMessage('Please enter a topic first.', 'error');
             return;
         }
+    
         if (promptOutput.textContent.trim() === '') {
             promptOutput.textContent = generatePrompt(topic, language, age);
             if (promptOutput.textContent.trim() !== lastGeneratedPrompt) {
@@ -464,24 +466,16 @@ document.addEventListener('DOMContentLoaded', function() {
                 lastGeneratedPrompt = promptOutput.textContent.trim();
             }
         }
+    
         const prompt = promptOutput.textContent.trim();
         directGenerateStoryBtn.disabled = true;
         generateButtonSpinner.style.display = 'inline-block';
+    
         try {
-            const response = await fetch(API_URL, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    message: prompt
-                }),
-            });
-            if (!response.ok) {
-                throw new Error(`API Error: ${response.status}`);
-            }
-            const data = await response.json();
-            const generatedStory = data.message;
+            // Call the sendMessage function to send the prompt to the backend
+            const generatedStory = await sendMessage(prompt);
+            
+            // Process the generated story
             lines = generatedStory.split('\n').filter(line => line.trim());
             currentIndex = 0;
             renderChat();
@@ -498,6 +492,36 @@ document.addEventListener('DOMContentLoaded', function() {
             generateButtonSpinner.style.display = 'none';
         }
     });
+    
+    // Updated sendMessage function
+    async function sendMessage(message) {
+        try {
+            const response = await fetch('/api/chat', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ message }),
+            });
+    
+            if (!response.ok) {
+                throw new Error(`API Error: ${response.status}`);
+            }
+    
+            const data = await response.json();
+            if (data.message) {
+                // Return the generated story from the API
+                return data.message;
+            } else {
+                console.error("Error from API: ", data.error);
+                throw new Error('Failed to generate story.');
+            }
+        } catch (error) {
+            console.error("Failed to send message:", error);
+            throw error;  // Re-throw to handle it in the main event listener
+        }
+    }
+    
 
     sendToPerplexityBtn.addEventListener('click', () => {
         let topic = topicInput.value.trim();
