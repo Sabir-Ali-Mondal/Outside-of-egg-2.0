@@ -1,27 +1,26 @@
-  {
-      "version": 2,
-      "builds": [
-        {
-          "src": "server.js",
-          "use": "@vercel/node"
-        },
-         {
-            "src": "api/chat.js",
-           "use": "@vercel/node"
-        }
-
-      ],
-       "routes": [
-            {
-                "src": "/api/chat",
-              "dest": "api/chat.js"
-           },
-         {
-          "src": "/(.*)",
-          "dest": "server.js"
-         }
-       ],
-      "env": {
-         "GEMINI_API_KEY": "@gemini_api_key"
-       }
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "server.js",
+        "use": "@vercel/node"
+      },
+      {
+        "src": "api/chat.js",
+        "use": "@vercel/node"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/api/chat",
+        "dest": "api/chat.js"
+      },
+      {
+        "src": "/(.*)",
+        "dest": "server.js"
+      }
+    ],
+    "env": {
+      "GEMINI_API_KEY": "AIzaSyAgb7Po4oAr_wNc104EoWQsg5DwnrM3GAY"
     }
+  }
