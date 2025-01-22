@@ -35,7 +35,8 @@ Welcome to Outside of Egg – a super fun and creative website where kids (and g
 ## 💻 Technologies Used 💻
 
 - **Frontend:** HTML, CSS, JavaScript
-- **AI Integration:** Perplexity AI, ChatGPT
+- **Backend:** Node.js
+- **AI Integration:** Perplexity AI, ChatGPT ,Gemini
 - **Voice Assistance:** Text-to-Speech Magic 🎤
 - **Animation:** Cute anime-style virtual teacher 🤖✨
 
