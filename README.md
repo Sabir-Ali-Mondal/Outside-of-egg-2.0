@@ -43,7 +43,7 @@ Welcome to Outside of Egg – a super fun and creative website where kids (and g
 
 ## 💼 Developed by Team: With\_Mindset 💼
 
-<img src="https://res.cloudinary.com/dmttn34te/image/upload/v1733070758/logo_ktr3sq.jpg" width="20" height="20" style="border-radius:10px;" />
+<img src="https://res.cloudinary.com/dmttn34te/image/upload/v1733070758/logo_ktr3sq.jpg" width="100" height="100" style="border-radius:10px;" />
 
 - **Afsan Rahaman**
 - **Akash Sha**
