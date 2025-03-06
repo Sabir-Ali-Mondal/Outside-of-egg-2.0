@@ -1,0 +1,7 @@
+Replace with Gemini API key in vercel.json file to run in VERCEL and fill .env file with Gemini API key for using locally.
+
+
+
+"env": {
+      "GEMINI_API_KEY": "YOURAPI"
+    }
