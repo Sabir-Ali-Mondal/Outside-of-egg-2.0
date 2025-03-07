@@ -1,4 +1,4 @@
-Must Read: [how-to-run.txt](https://github.com/Sabir-Ali-Mondal/Outside-of-egg-2.0/blob/master/how-to-run.txt)
+Must Read Before Run: [how-to-run.md](https://github.com/Sabir-Ali-Mondal/Outside-of-egg-2.0/blob/master/how-to-run.md)
 
 ## 🐣 Outside of Egg 🐣 2.0
 A Friendly, Creative Talking Website 🧑‍🏫✨
