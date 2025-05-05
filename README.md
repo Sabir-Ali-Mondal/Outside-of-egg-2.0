@@ -2,7 +2,7 @@ Must Read Before Run: [how-to-run.md](https://github.com/Sabir-Ali-Mondal/Outsid
 
 ## 🐣 Outside of Egg 🐣 2.0
 A Friendly, Creative Talking Website 🧑‍🏫✨
-Visit : [https://outsideofegg2.ccbp.tech/](https://outsideofegg2.ccbp.tech/)
+Visit : [https://outsideofegg.ccbp.tech/](https://outsideofegg2.ccbp.tech/)
 
 ---
 
